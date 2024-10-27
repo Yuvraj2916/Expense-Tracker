@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Budget Tracker</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/set_budget">Set Budget</a>
+            <a href="/savings">Savings</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="budget-overview">
+            <h2>Budget Overview</h2>
+            <p><strong>Monthly Budget:</strong> ₹{{ budget }}</p>
+            <p><strong>Total Spent:</strong> ₹{{ total }}</p>
+            <p><strong>Remaining Budget:</strong> ₹{{ remaining_budget }}</p>
+            {% if remaining_budget < 0 %}
+                <p style="color: red;"><strong>Warning:</strong> You've exceeded your budget by ₹{{ -remaining_budget }}!</p>
+            {% endif %}
+        </section>
+
+        <section class="add-entry">
+            <h2>Add a New Entry</h2>
+            <form action="/add" method="POST">
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="Food">Food 😋</option>
+                        <option value="Stationary">Stationary ✒️</option>
+                        <option value="Bills">Bills 📰</option>
+                        <option value="Groceries">Groceries 🍎</option>
+                        <option value="Entertainment">Entertainment 📺</option>
+                        <option value="Travel">Travel ✈️</option>
+                        <option value="Shopping">Shopping 🛒</option>
+                        <option value="Health">Health 🏥</option>
+                        <option value="Others">Others 🙄</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" required>
+                </div>
+                <button type="submit" class="btn">Add Entry</button>
+            </form>
+        </section>
+
+        <section class="entries">
+            <h2>All Entries</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry[0] }}</td>
+                        <td>{{ entry[1] }}</td>
+                        <td>₹{{ entry[2] }}</td>
+                        <td>{{ entry[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <h2>Total Amount Spent: ₹{{ total }}</h2>
+    </footer>
+</body>
+</html>

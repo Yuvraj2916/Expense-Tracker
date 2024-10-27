@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Savings Goals</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/set_budget">Set Budget</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <form method="POST">
+            <label for="amount">Amount:</label>
+            <input type="text" name="amount" required>
+            <label for="goal">Goal:</label>
+            <input type="text" name="goal" required>
+            <button type="submit">Add Savings Goal</button>
+        </form>
+
+        <h2>Current Savings Goals</h2>
+        <ul>
+            {% for saving in savings %}
+                <li>Amount: {{ saving[0] }} - Goal: {{ saving[1] }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

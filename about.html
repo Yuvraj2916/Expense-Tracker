@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>About Our Team</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/set_budget">Set Budget</a>
+            <a href="/savings">Savings</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Meet the Team</h2>
+            <ul>
+                {% for member in team %}
+                <li>{{ member.name }} - {{ member.role }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

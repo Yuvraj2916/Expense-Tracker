@@ -1,0 +1,256 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+section {
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(10px);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styling */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+input, select {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 3px 9px rgba(106, 17, 203, 0.2);
+}
+
+button.btn {
+    grid-column: 1 / span 2;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+button.btn:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: translateY(-2px);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: none;
+}
+
+th {
+    background-color: #6a11cb;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+td {
+    padding: 1rem;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.05);
+    font-size: 1.4rem;
+    color: #555;
+    margin-top: 2rem;
+    position: relative;
+}
+
+footer h2 {
+    margin: 0;
+}
+
+/* About Page */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 1rem;
+    background-color: white;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+ul li:hover {
+    background-color: #f0f2f5;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
