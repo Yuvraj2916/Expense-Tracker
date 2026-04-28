@@ -52,5 +52,5 @@ A simple and efficient budget management and savings tracking web app built with
 ## 🛠️ Technologies Used
 1. Python & Flask - Backend development
 2. HTML/CSS - Frontend templates and styling
-3. CSV Files - Data storage for budget entries, savings goals, and user budgets
+3. CSV Files - Data storage for budget entries, savings goals, and user budgets.
 
